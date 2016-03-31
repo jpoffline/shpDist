@@ -1,12 +1,12 @@
 
 #include <vector>
 
-#include "TUPLE.h"
+
 
 #ifndef _TEST_LOCATION__
 #define _TEST_LOCATION__
 
-
+#include "TUPLE.h"
 
 class TEST_LOCATION{
     

@@ -1,6 +1,7 @@
 
 #include "COORD_CONVERT.h"
 
+COORD_CONVERT::COORD_CONVERT(){}
 
 double COORD_CONVERT::cart2r(double x, double y){
 	return std::sqrt(x * x + y * y);
