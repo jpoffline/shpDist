@@ -138,7 +138,7 @@ void CREATE_DIST::dump_distances(std::string fileName){
 
 void CREATE_DIST::bin_distances(std::string filename){
 
-	HISTOGRAM distance_histogram(_nbins, _smallest_dist, _largest_dist, _distances);
+	HISTOGRAM distance_histogram(_nbins, 0.0, 2.0 * _rmax, _distances);
 	distance_histogram.dump_hist(filename);
 	
 	
