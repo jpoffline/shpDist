@@ -7,6 +7,8 @@
 #include <time.h> 
 #include "CREATE_DIST.h"
 
+#include "GEN_SET.h"
+
 std::string number2string(int number){
 	std::stringstream convert;
 	convert << number;
@@ -19,6 +21,14 @@ std::string gen_hist_fn(int r, std::string prefix){
 }
 
 int main(){
+    
+    GEN_SET<double> my_values;
+    my_values.add(1.0);
+    my_values.add(21.1);
+    std::cout << my_values.get(1) << std::endl;
+    std::cout << my_values.first() << std::endl;
+    std::cout << my_values.get(3) <<std::endl;
+    /*
     srand (time(NULL));
     int nreals = 10;
 	int nlocs = 1000;
@@ -34,6 +44,7 @@ int main(){
 		dist.print_distance_stats();
 		dist.bin_distances( gen_hist_fn(r, "hist") );
 
-	}	
+	}
+    */	
 	
 }
