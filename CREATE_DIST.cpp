@@ -75,6 +75,13 @@ double get_rsign(){
     }
 }    
     
+double get_rand_pm_window(double plength){
+    // Function to return a random number
+    // in the range [-plength, + plength]
+    
+    return get_rsign() * uniform_random() * plength;
+}    
+    
 void CREATE_DIST::create_dist(){
     
     for(int i = 0; i < _n_locations; i++){
@@ -83,9 +90,9 @@ void CREATE_DIST::create_dist(){
         double testR = _rmax + 0.1;
         double x, y;
         while(testR > _rmax){
-            x = get_rsign() * uniform_random() * _rmax;
-            y = get_rsign() * uniform_random() * _rmax;
-            testR = std::sqrt(x*x + y * y);
+            x = get_rand_pm_window( _rmax );
+            y = get_rand_pm_window( _rmax );
+            testR = std::sqrt( x * x + y * y);
         }
         loc.set_loc(x,y);
         
