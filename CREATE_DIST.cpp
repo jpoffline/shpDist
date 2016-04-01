@@ -66,6 +66,7 @@ double CREATE_DIST::get_field_value(double r, double t){
 	
 }
     
+
 double get_rsign(){
     if(uniform_random() < 0.5){
         return -1.0;
@@ -87,6 +88,7 @@ void CREATE_DIST::create_dist(){
     for(int i = 0; i < _n_locations; i++){
         TEST_LOCATION loc;
         
+
         double testR = _rmax + 0.1;
         double x, y;
         while(testR > _rmax){
@@ -97,6 +99,7 @@ void CREATE_DIST::create_dist(){
         loc.set_loc(x,y);
         
         loc.set_field(1.0);
+
         add_location(loc);
     }
     
@@ -147,12 +150,15 @@ void CREATE_DIST::print_distance_stats(){
 
 void CREATE_DIST::dump_distances(std::string fileName){
 	std::ofstream dump;
+
 	dump.open(fileName.c_str());
+
 	for(int i = 0; i < _distances.size(); i++){
 		dump << _distances[i] << "\n";
 	}
 	dump.close();
 }
+
 
 void CREATE_DIST::dump_dist(std::string fileName){
     std::ofstream dump;
@@ -162,6 +168,7 @@ void CREATE_DIST::dump_dist(std::string fileName){
 	}
 	dump.close();
 }
+
 
 void CREATE_DIST::bin_distances(std::string filename){
 

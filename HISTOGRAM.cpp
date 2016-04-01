@@ -60,6 +60,7 @@ std::vector<BIN> HISTOGRAM::get_bins(){
 
 void HISTOGRAM::dump_hist(std::string filename){
 	std::ofstream dump;
+
 	dump.open(filename.c_str());
 	for(int i = 0; i < _nbins; i++){
 		dump << _bins[i].start() + _dbin << " " << _bins[i].count() << "\n";

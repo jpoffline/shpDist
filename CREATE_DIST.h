@@ -43,8 +43,12 @@ class CREATE_DIST{
         void create_dist();
 		void print_point_locations();
 		void scan_distances();		
-  		void print_distances();
+
+
         void dump_dist(std::string);  
+
+  		void print_distances();  
+
 		void dump_distances(std::string);
 		void print_distance_stats();
 		void set_rmax(double);
